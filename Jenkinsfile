@@ -28,5 +28,17 @@ pipeline {
                 sh 'docker build -t lekanswanson/webapp:1.01 .'
             }
         }
+        stage('Run App') {
+            steps {
+                sh 'docker run -d -it --rm -p7070:7070 lekanswanson/webapp:1.01 webapp'
+		sleep 60
+		sh 'docker stop webapp' 
+            }
+        }	
+	stage('Image Cleanup') {
+	    steps {
+		sh 'docker system prune -af --volumes' 
+	    }
+	}
     }
 }
