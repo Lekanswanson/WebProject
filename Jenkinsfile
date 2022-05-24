@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/*:refs/changes/*', url: 'http://51.37.232.174:80/Lekanswanson/WebProject']]])
-                sh 'ls'
+                sh 'ls -al'
             }
         }
         stage('Build') {
