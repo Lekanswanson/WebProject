@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh 'ls -al'
+                echo 'Latest'
+		sh 'ls -al'
                 sh 'rm -rf * && ls -al'
             }
         }
@@ -28,5 +29,17 @@ pipeline {
                 sh 'docker build -t lekanswanson/webapp:1.01 .'
             }
         }
+        stage('Run App') {
+            steps {
+                sh 'docker run -d -it --rm -p7070:7070 --name webapp lekanswanson/webapp:1.01'
+		sleep 50
+		sh 'docker stop webapp' 
+            }
+        }	
+	stage('Image Cleanup') {
+	    steps {
+		sh 'docker system prune -af --volumes' 
+	    }
+	}
     }
 }
