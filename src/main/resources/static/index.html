@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Weather Station </title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="weatherinfo.css">
+	<script type="text/javascript" src="weather.js"></script>
+</head>
+
+<body>
+	<div id="sideNav" class="navbar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+		<a href="javascript:void(0)" id="design"><h6>Five Day Forecast</h6></a>
+
+		<div id="myflex">
+			<div id="day1" class="flex">	
+			</div>
+			<div id="day2" class="flex">	
+			</div>
+			<div id="day3" class="flex">	
+			</div>
+			<div id="day4" class="flex">	
+			</div>
+			<div id="day5" class="flex">	
+			</div>
+		</div>
+	</div>
+	<div>
+		<span id="btnnav" style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+	</div>
+	
+	<div id="maingrid" class="MainGrid">		
+		<div class="header">
+			<h1> Weather-Station</h1>
+			<span id="errormsg" style="color: red; position: relative; left: 50%; background-color: rgba(0, 0, 0,0);">*</span><br id="showhide">
+			<input type="text" name="search" id="textCity" placeholder="...search weather from all around the world..." onfocusout="resetPlaceholder(this)" onfocus="clearPlaceholder(this)">
+			<button id="btnSearch">Search</button>
+		</div>
+				
+		<div id="Aside" class="aside">
+			<a href=""><button id="Imperial">Imperial</button></a>
+			<a href=""><button id="Metric">Metric</button></a>
+			<a href=""><button id="Standard">Standard</button></a>
+		</div>
+		
+		<div id="display" class="section">
+			<h1 style="text-align: center; margin-top: 25%; background-color: initial;">Weather Information <br> Will Be Displayed Here</h1>
+		</div>
+		
+		<div id="main" class="main">	
+			<div style="background-color: greenyellow;  height: 70px; position: relative; display: flex; flex-direction: column; margin-top: 0">
+				<input type="text" id="city2" placeholder="Search" style="position: relative; height: 30px; width: 50%; left: 25%; text-align: center; background-color: white">
+				<div style="display: inline; background: inherit;">
+					<button id="compare" style="position: relative; left: 20%;">Compare City</button>
+					<button id="btnChart" style="position: relative; left: 20%;"><a href="charts.html">Show Graph</a></button>
+				</div>
+			</div>
+			<div style="min-height: 480px; max-height: 80%; position: relative; background-color: whitesmoke; margin: 0;">
+				<span id="displayinfo"></span>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<p style="text-align: center; background-color: initial; margin-top: 15px;">Thank you for visiting my website and hope you liked it.</p>
+		</div>
+	</div>
+</body>
+
+</html>

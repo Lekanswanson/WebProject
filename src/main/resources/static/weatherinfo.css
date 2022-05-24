@@ -1,0 +1,78 @@
+/* style all h2 and h3 tags */
+h2, h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 200%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h4 {
+    text-align: center;
+    margin: 10px;
+    font-size: 130%;
+    background-color: inherit;
+}
+
+/* Style every 2nd child starting from 3rd */
+h4:nth-child(2n + 3)
+{
+    color: red;
+}
+
+/* starting from first*/
+h2:nth-child(2n + 1){
+    color: red;
+}
+
+/* Style the heading class  */
+.heading {
+    margin: 0;
+    position: relative;
+    background-color: black;
+    font-size: 300%;
+    background: -webkit-linear-gradient(45deg, #881717 20%, orange 45%, #ddcf08 70%, white 100%); /* create gradient background image for text */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#icon {
+    position: relative;
+    background: inherit;
+}
+
+#myerr {
+    background-color: inherit;
+    font-size: 120%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.headingCompare {
+    padding: 0;
+    font-size: 120%;
+    margin: 0;
+    position: relative;
+    padding-top: 2%;
+    top: 5%;
+    background-color: initial;
+    letter-spacing: 2px;
+}
+
+.mainCompare {
+    padding: 0;
+    font-size: 110%;
+    background-color: initial;
+    margin: 0;
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

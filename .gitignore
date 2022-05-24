@@ -1,0 +1,10 @@
+# git ignore file
+
+# ignore mnvw files
+mvnw*
+
+# ignore target folder
+/target
+
+# ignore help md
+HELP.*
