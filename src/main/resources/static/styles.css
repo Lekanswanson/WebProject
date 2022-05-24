@@ -10,7 +10,7 @@
 .MainGrid {
 	transition: margin-left .5s;
 	display: grid;
-	height: 1050px;
+	height: 1040px;
 	grid-template-rows: auto;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:"header header header "
