@@ -8,12 +8,13 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
+		echo 'Clean old files'
                 sh 'rm -rf * && ls -al'
             }
         }
         stage('Init') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://51.37.232.174:80/Lekanswanson/WebProject']]])
+                #checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://51.37.232.174:80/Lekanswanson/WebProject']]])
                 sh 'ls'
             }
         }
@@ -30,7 +31,7 @@ pipeline {
         stage('Run App') {
             steps {
                 sh 'docker run -d -it --rm -p7070:7070 --name webapp lekanswanson/webapp:1.01'
-		sleep 40
+		sleep 50
 		sh 'docker stop webapp' 
             }
         }	
