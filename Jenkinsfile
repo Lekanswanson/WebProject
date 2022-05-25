@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
+		echo 'Clean old files'
                 sh 'rm -rf * && ls -al'
             }
         }
@@ -30,7 +31,7 @@ pipeline {
         stage('Run App') {
             steps {
                 sh 'docker run -d -it --rm -p7070:7070 --name webapp lekanswanson/webapp:1.01'
-		sleep 40
+		sleep 50
 		sh 'docker stop webapp' 
             }
         }	
