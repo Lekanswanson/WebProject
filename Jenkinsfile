@@ -1,7 +1,7 @@
 pipeline {
     agent {
 	    node {
-	        label 'DOCKER_AGENT'
+	        label 'GRIDENGINE'
 	    }
     }
 
