@@ -30,7 +30,7 @@ pipeline {
         stage('Run App') {
             steps {
                 sh 'docker run -d -it --rm -p7070:7070 --name webapp lekanswanson/webapp:1.01'
-		sleep 40
+		sleep 60
 		sh 'docker stop webapp' 
             }
         }	
