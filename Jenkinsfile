@@ -15,7 +15,7 @@ pipeline {
         stage('Init') {
             steps {
 		echo 'Checking out latest changes'
-                checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3], [$class: 'BuildChooserSetting', buildChooser: [$class: 'GerritTriggerBuildChooser']]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://93.107.17.92/Lekanswanson/WebProject']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3], [$class: 'BuildChooserSetting', buildChooser: [$class: 'GerritTriggerBuildChooser']]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://109.76.123.127:29418/Lekanswanson/WebProject']]])
                 sh 'ls'
             }
         }
