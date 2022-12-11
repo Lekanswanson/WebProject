@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-		echo 'Cleaning old files.'
+		echo 'Cleaning old files for now'
                 sh 'rm -rf * && ls -al'
             }
         }
