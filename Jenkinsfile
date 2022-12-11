@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-		echo 'Cleaning old files for now'
+		echo 'I am Cleaning old files again'
                 sh 'rm -rf * && ls -al'
             }
         }
         stage('Init') {
             steps {
 		echo 'Checking out latest changes'
-                checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3], [$class: 'BuildChooserSetting', buildChooser: [$class: 'GerritTriggerBuildChooser']]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://109.76.123.127/Lekanswanson/WebProject']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CheckoutOption', timeout: 3], [$class: 'BuildChooserSetting', buildChooser: [$class: 'GerritTriggerBuildChooser']]], userRemoteConfigs: [[name: 'origin', refspec: '+refs/changes/*:refs/changes/*', url: 'http://51.37.215.254/Lekanswanson/WebProject']]])
                 sh 'ls'
             }
         }
